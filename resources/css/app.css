@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-forest-50: #ecfdf5;
+    --color-forest-100: #d1fae5;
+    --color-forest-200: #a7f3d0;
+    --color-forest-300: #6ee7b7;
+    --color-forest-400: #34d399;
+    --color-forest-500: #10b981;
+    --color-forest-600: #059669;
+    --color-forest-700: #047857;
+    --color-forest-800: #065f46;
+    --color-forest-900: #064e3b;
+    --color-forest-950: #022c22;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    ::selection {
+        background-color: var(--color-forest-200);
+        color: var(--color-forest-950);
+    }
+
+    .dark ::selection {
+        background-color: var(--color-forest-800);
+        color: var(--color-forest-100);
+    }
+}
+
+@utility container {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+@media (width >= 40rem) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
